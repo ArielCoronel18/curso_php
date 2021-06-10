@@ -8,7 +8,34 @@
         'username' =>  'ArielC',
         'profession' => 'Enginer Surveyor',
         'intereses' => ['Desarrollo web', 'Diseño gráfico']
-    ]
+    ];
+
+    $Cursos = [
+      [
+        'name' => 'Curso de Git y GitHub',
+        'featured' => 'curso-de-git-y-github.png',
+        'teacher' => 'Rodrigo Urcino Alvarez'
+      ],
+
+      [
+        'name' => 'Curso de html y css',
+        'featured' => 'curso-de-html-y-css-gratis-300x169.jpg',
+        'teacher' => 'Angel Sánchez Espinoza'
+      ],
+
+      [
+        'name' => 'Curso de javascript',
+        'featured' => 'curso-de-javascript-300x169.png',
+        'teacher' => 'José Manuel Pereira Cih'
+      ],
+
+      [
+        'name' => 'Curso de php',
+        'featured' => 'curso-de-php-desde-cero-300x169.png',
+        'teacher' => 'Carlos Hernández'
+      ]
+     
+    ];
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +74,28 @@
             <p><?= $user[ 'username'] ?></p>
             <p><?= $user[ 'profession'] ?></p>
         </div>
-    </div>
+    </div>  
+</section>
 
+<section class="container-fluid">
+    <div class="row justify-content-center">
+        <div class= "col-12 text-center mb-4">
+          <h2>Mis cursos</h2>
+        </div> 
+          <?php foreach($Cursos as $Cursos): ?>
+            <div class="col-3">
+            <div class="card m-auto" style="width: 18rem;">
+              <img src="./images/<?= $Cursos['featured'] ?> " class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"> <?= $Cursos['name'] ?> </h5>
+                <p class="card-text" >Teacher: <b><?= $Cursos['teacher'] ?></b> </p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            </div> 
+          <?php endforeach; ?>          
+    </div>  
 </section>
 </body>
 </html>
